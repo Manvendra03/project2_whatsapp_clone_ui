@@ -3,6 +3,10 @@ import 'package:project_2_whatsapp_clone/Kconstants.dart';
 
 class ShowChats extends StatelessWidget {
   Color greyblack = Colors.black54;
+  final String UserName;
+  final AssetImage ProfileImage;
+
+  ShowChats({super.key, required this.UserName, required this.ProfileImage});
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +33,7 @@ class ShowChats extends StatelessWidget {
                   Spacer(),
                   CircleAvatar(
                     backgroundColor: Colors.black,
+                    backgroundImage: ProfileImage,
                     radius: 22,
                   ),
                 ],
@@ -40,7 +45,7 @@ class ShowChats extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Chotu Don",
+                  UserName,
                   style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       color: Colors.white, fontWeight: FontWeight.w600),
                 ),

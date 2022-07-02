@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project_2_whatsapp_clone/Kconstants.dart';
 import 'package:project_2_whatsapp_clone/Model/user.dart';
 import 'package:project_2_whatsapp_clone/Screens/show_chats.dart';
 import 'package:project_2_whatsapp_clone/Screens/show_status.dart';
@@ -12,20 +11,20 @@ class ChatsScreen extends StatelessWidget {
         ProfileImage: AssetImage("Assets/images/profile_one.png"),
         LastMessage: "heyyy"),
     UserProfile(
-        UserName: "Manvendra",
-        LastMessageTime: "12:45",
-        ProfileImage: AssetImage("Assets/images/profile_one.png"),
+        UserName: "Monty",
+        LastMessageTime: "1:45",
+        ProfileImage: AssetImage("Assets/images/profile_secound.jpg"),
         LastMessage: "heyyy"),
     UserProfile(
-        UserName: "Manvendra",
-        LastMessageTime: "12:45",
+        UserName: "Rohit",
+        LastMessageTime: "2:05",
         ProfileImage: AssetImage("Assets/images/profile_one.png"),
-        LastMessage: "heyyy"),
+        LastMessage: "yes I'am in"),
     UserProfile(
-        UserName: "Manvendra",
-        LastMessageTime: "12:45",
-        ProfileImage: AssetImage("Assets/images/profile_one.png"),
-        LastMessage: "heyyy"),
+        UserName: "Ishaa",
+        LastMessageTime: "5:45",
+        ProfileImage: AssetImage("Assets/images/profile_third.jpg"),
+        LastMessage: "hello"),
     UserProfile(
         UserName: "Manvendra",
         LastMessageTime: "12:45",
@@ -46,8 +45,13 @@ class ChatsScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return ListTile(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => ShowChats())));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: ((context) => new ShowChats(
+                            ProfileImage: FriendList[index].ProfileImage,
+                            UserName: FriendList[index].UserName,
+                          ))));
             },
             horizontalTitleGap: 20,
             leading: GestureDetector(
